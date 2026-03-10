@@ -119,6 +119,34 @@
         0 0 0 4px rgba(99, 102, 241, 0.3);
     }
 
+    /* Disabled 状态 - 无障碍支持 */
+    .circular-button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      box-shadow: none;
+      transform: none;
+    }
+
+    .circular-button:disabled .icon {
+      transform: none;
+    }
+
+    /* 减少动画偏好 - 无障碍支持 */
+    @media (prefers-reduced-motion: reduce) {
+      .circular-button {
+        transition: none;
+      }
+
+      .circular-button:hover,
+      .circular-button:active {
+        transform: none;
+      }
+
+      .circular-button .icon {
+        transition: none;
+      }
+    }
+
     /* 标签文字 */
     .button-label {
       color: #4b5563;
@@ -166,11 +194,52 @@
   </div>
 
   <script>
-    // 可选：添加点击事件处理
-    document.querySelector('.circular-button').addEventListener('click', function() {
-      console.log('按钮被点击了！');
-      // 在这里添加你的业务逻辑
-    });
+    (function() {
+      // 安全初始化 - 避免脚本重复执行
+      if (window.__circularButtonInitialized) return;
+      window.__circularButtonInitialized = true;
+
+      // 获取按钮元素 - 带空值检查
+      var button = document.querySelector('.circular-button');
+      if (!button) {
+        console.warn('圆形按钮元素未找到');
+        return;
+      }
+
+      // 防抖标志 - 防止快速重复点击
+      var isProcessing = false;
+
+      // 点击事件处理
+      button.addEventListener('click', function(event) {
+        // 禁用状态下不处理
+        if (button.disabled) return;
+
+        // 防抖检查
+        if (isProcessing) {
+          event.preventDefault();
+          return;
+        }
+
+        isProcessing = true;
+        console.log('按钮被点击了！');
+
+        // 在这里添加你的业务逻辑
+        // 业务逻辑完成后重置防抖标志：isProcessing = false;
+
+        // 示例：0.5 秒后重置（根据实际业务调整）
+        setTimeout(function() {
+          isProcessing = false;
+        }, 500);
+      });
+
+      // 键盘事件支持 - Enter 和 Space 触发
+      button.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          button.click();
+        }
+      });
+    })();
   </script>
 </body>
 </html>
