@@ -1,0 +1,338 @@
+{
+  "version": "2.8",
+  "children": [
+    {
+      "type": "frame",
+      "id": "canvas_root",
+      "x": 0,
+      "y": 0,
+      "name": "Circular Button Design",
+      "width": 800,
+      "height": 600,
+      "fill": "#F5F5F5",
+      "children": [
+        {
+          "type": "text",
+          "id": "title",
+          "x": 40,
+          "y": 30,
+          "name": "标题",
+          "width": 720,
+          "height": 40,
+          "content": "圆形按钮设计稿 / Circular Button Design",
+          "fill": "#1F2937",
+          "fontFamily": "Inter",
+          "fontSize": 28,
+          "fontWeight": "700"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "x": 40,
+          "y": 80,
+          "name": "副标题",
+          "width": 720,
+          "height": 24,
+          "content": "现代风格径向渐变按钮 - 三种交互状态展示",
+          "fill": "#6B7280",
+          "fontFamily": "Inter",
+          "fontSize": 16,
+          "fontWeight": "400"
+        },
+        {
+          "type": "frame",
+          "id": "state1_container",
+          "x": 80,
+          "y": 160,
+          "name": "State 1 - Default",
+          "width": 200,
+          "height": 280,
+          "fill": "#FFFFFF",
+          "cornerRadius": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "state1_label",
+              "x": 40,
+              "y": 16,
+              "name": "状态标签",
+              "width": 120,
+              "height": 20,
+              "content": "默认态 Default",
+              "fill": "#374151",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "600",
+              "textAlign": "center"
+            },
+            {
+              "type": "frame",
+              "id": "button1",
+              "x": 40,
+              "y": 60,
+              "name": "Button Default",
+              "width": 120,
+              "height": 120,
+              "cornerRadius": 60,
+              "fill": "#6366F1",
+              "path": "M60,0 C93.137,0 120,26.863 120,60 C120,93.137 93.137,120 60,120 C26.863,120 0,93.137 0,60 C0,26.863 26.863,0 60,0 Z M60,20 C37.909,20 20,37.909 20,60 C20,82.091 37.909,100 60,100 C82.091,100 100,82.091 100,60 C100,37.909 82.091,20 60,20 Z",
+              "children": [
+                {
+                  "type": "group",
+                  "id": "button1_gradient",
+                  "name": "Radial Gradient",
+                  "children": [
+                    {
+                      "type": "ellipse",
+                      "id": "button1_gradient_inner",
+                      "x": 0,
+                      "y": 0,
+                      "width": 120,
+                      "height": 120,
+                      "fill": "#6366F1",
+                      "opacity": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "path",
+                  "id": "button1_icon",
+                  "x": 36,
+                  "y": 36,
+                  "name": "Star Icon",
+                  "width": 48,
+                  "height": 48,
+                  "fill": "#FFFFFF",
+                  "path": "M24,4 L29.5,18 L44,18 L32.5,27 L37,41 L24,32 L11,41 L15.5,27 L4,18 L18.5,18 Z",
+                  "stroke": "#FFFFFF",
+                  "strokeThickness": 2
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "state1_desc",
+              "x": 20,
+              "y": 210,
+              "name": "状态描述",
+              "width": 160,
+              "height": 36,
+              "content": "基础状态\n阴影：0 4px 15px rgba(99,102,241,0.4)",
+              "fill": "#9CA3AF",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "400",
+              "textAlign": "center",
+              "lineHeight": 18
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "state2_container",
+          "x": 300,
+          "y": 160,
+          "name": "State 2 - Hover",
+          "width": 200,
+          "height": 280,
+          "fill": "#FFFFFF",
+          "cornerRadius": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "state2_label",
+              "x": 40,
+              "y": 16,
+              "name": "状态标签",
+              "width": 120,
+              "height": 20,
+              "content": "悬停态 Hover",
+              "fill": "#374151",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "600",
+              "textAlign": "center"
+            },
+            {
+              "type": "frame",
+              "id": "button2",
+              "x": 34,
+              "y": 48,
+              "name": "Button Hover",
+              "width": 132,
+              "height": 132,
+              "cornerRadius": 66,
+              "fill": "#7C3AED",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "button2_base",
+                  "x": 0,
+                  "y": 0,
+                  "width": 132,
+                  "height": 132,
+                  "cornerRadius": 66,
+                  "fill": "#7C3AED"
+                },
+                {
+                  "type": "path",
+                  "id": "button2_icon",
+                  "x": 42,
+                  "y": 42,
+                  "name": "Star Icon",
+                  "width": 48,
+                  "height": 48,
+                  "fill": "#FFFFFF",
+                  "path": "M24,4 L29.5,18 L44,18 L32.5,27 L37,41 L24,32 L11,41 L15.5,27 L4,18 L18.5,18 Z",
+                  "stroke": "#FFFFFF",
+                  "strokeThickness": 2
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "state2_desc",
+              "x": 20,
+              "y": 210,
+              "name": "状态描述",
+              "width": 160,
+              "height": 36,
+              "content": "鼠标悬停\n放大 1.1 倍 + 阴影加深\n0 8px 30px rgba(99,102,241,0.6)",
+              "fill": "#9CA3AF",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "400",
+              "textAlign": "center",
+              "lineHeight": 18
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "state3_container",
+          "x": 520,
+          "y": 160,
+          "name": "State 3 - Active",
+          "width": 200,
+          "height": 280,
+          "fill": "#FFFFFF",
+          "cornerRadius": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "state3_label",
+              "x": 40,
+              "y": 16,
+              "name": "状态标签",
+              "width": 120,
+              "height": 20,
+              "content": "点击态 Active",
+              "fill": "#374151",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "600",
+              "textAlign": "center"
+            },
+            {
+              "type": "frame",
+              "id": "button3",
+              "x": 50,
+              "y": 70,
+              "name": "Button Active",
+              "width": 100,
+              "height": 100,
+              "cornerRadius": 50,
+              "fill": "#5B21B6",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "button3_base",
+                  "x": 0,
+                  "y": 0,
+                  "width": 100,
+                  "height": 100,
+                  "cornerRadius": 50,
+                  "fill": "#5B21B6"
+                },
+                {
+                  "type": "path",
+                  "id": "button3_icon",
+                  "x": 26,
+                  "y": 26,
+                  "name": "Star Icon",
+                  "width": 48,
+                  "height": 48,
+                  "fill": "#FFFFFF",
+                  "path": "M24,4 L29.5,18 L44,18 L32.5,27 L37,41 L24,32 L11,41 L15.5,27 L4,18 L18.5,18 Z",
+                  "stroke": "#FFFFFF",
+                  "strokeThickness": 2
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "state3_desc",
+              "x": 20,
+              "y": 210,
+              "name": "状态描述",
+              "width": 160,
+              "height": 36,
+              "content": "点击按下\n按压缩小至 0.9 倍\n阴影减弱",
+              "fill": "#9CA3AF",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "400",
+              "textAlign": "center",
+              "lineHeight": 18
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "specs_container",
+          "x": 80,
+          "y": 480,
+          "name": "Design Specs",
+          "width": 640,
+          "height": 100,
+          "fill": "#FFFFFF",
+          "cornerRadius": 16,
+          "padding": 24,
+          "layout": "vertical",
+          "gap": 12,
+          "children": [
+            {
+              "type": "text",
+              "id": "specs_title",
+              "x": 24,
+              "y": 24,
+              "name": "规格标题",
+              "width": 200,
+              "height": 20,
+              "content": "设计规格 Design Specifications",
+              "fill": "#1F2937",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "specs_content",
+              "x": 24,
+              "y": 52,
+              "name": "规格内容",
+              "width": 592,
+              "height": 36,
+              "content": "尺寸：120px (桌面) / 100px (平板) / 88px (移动) | 渐变：#6366F1 → #8B5CF6 | 图标：48px 星形 | 圆角：50% (正圆) | 过渡：0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+              "fill": "#6B7280",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "400",
+              "lineHeight": 18
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
