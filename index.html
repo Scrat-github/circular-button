@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>现代渐变圆形按钮</title>
+  <style>
+    /* CSS 变量 - 便于定制 */
+    :root {
+      /* 渐变颜色 */
+      --gradient-start: #6366f1;  /* 靛蓝色 */
+      --gradient-end: #8b5cf6;    /* 紫色 */
+
+      /* 按钮尺寸 */
+      --button-size: 120px;
+      --icon-size: 48px;
+
+      /* 阴影 */
+      --shadow-base: 0 4px 15px rgba(99, 102, 241, 0.4);
+      --shadow-hover: 0 8px 30px rgba(99, 102, 241, 0.6);
+      --shadow-active: 0 2px 10px rgba(99, 102, 241, 0.3);
+
+      /* 过渡动画 */
+      --transition-duration: 0.3s;
+      --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* 基础样式重置 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* 页面布局 - 居中显示按钮 */
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      gap: 40px;
+    }
+
+    /* 圆形按钮容器 */
+    .circular-button-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    /* 圆形按钮主体 */
+    .circular-button {
+      /* 尺寸和形状 */
+      width: var(--button-size);
+      height: var(--button-size);
+      border-radius: 50%;
+
+      /* 径向渐变背景 */
+      background: radial-gradient(
+        120% 120% at 30% 30%,
+        var(--gradient-start) 0%,
+        var(--gradient-end) 100%
+      );
+
+      /* 边框和阴影 */
+      border: none;
+      box-shadow: var(--shadow-base);
+
+      /* 光标和过渡 */
+      cursor: pointer;
+      transition: all var(--transition-duration) var(--transition-timing);
+
+      /* 内部布局 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      /* 无障碍 */
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* SVG 图标样式 */
+    .circular-button .icon {
+      width: var(--icon-size);
+      height: var(--icon-size);
+      fill: white;
+      transition: transform var(--transition-duration) var(--transition-timing);
+    }
+
+    /* Hover 状态 - 放大 + 阴影加深 */
+    .circular-button:hover {
+      transform: scale(1.1);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .circular-button:hover .icon {
+      transform: scale(1.05);
+    }
+
+    /* Active/Click 状态 - 按压效果 */
+    .circular-button:active {
+      transform: scale(0.95);
+      box-shadow: var(--shadow-active);
+    }
+
+    .circular-button:active .icon {
+      transform: scale(0.95);
+    }
+
+    /* Focus 状态 - 无障碍支持 */
+    .circular-button:focus-visible {
+      box-shadow:
+        var(--shadow-base),
+        0 0 0 4px rgba(99, 102, 241, 0.3);
+    }
+
+    /* 标签文字 */
+    .button-label {
+      color: #4b5563;
+      font-size: 16px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    /* 响应式设计 - 移动端适配 */
+    @media (max-width: 640px) {
+      :root {
+        --button-size: 100px;
+        --icon-size: 40px;
+      }
+
+      body {
+        padding: 20px;
+      }
+
+      .button-label {
+        font-size: 14px;
+      }
+    }
+
+    /* 小屏幕进一步优化 */
+    @media (max-width: 380px) {
+      :root {
+        --button-size: 88px;
+        --icon-size: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="circular-button-wrapper">
+    <!-- 圆形按钮 -->
+    <button class="circular-button" aria-label="开始操作" title="点击开始">
+      <!-- SVG 星形图标 -->
+      <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+      </svg>
+    </button>
+
+    <p class="button-label">点击按钮开始</p>
+  </div>
+
+  <script>
+    // 可选：添加点击事件处理
+    document.querySelector('.circular-button').addEventListener('click', function() {
+      console.log('按钮被点击了！');
+      // 在这里添加你的业务逻辑
+    });
+  </script>
+</body>
+</html>
